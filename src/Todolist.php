@@ -8,7 +8,7 @@ use App\TodolistInterface;
 class Todolist implements TodolistInterface{
     use TodolistTrait;
     
-    public function __construct()
+    public function execute()
     {
         do {
             echo "Enter a command (add, remove, list, exit): ";
@@ -36,5 +36,10 @@ class Todolist implements TodolistInterface{
             }
         } while (true);
     }
-    
+
+
+    public function countTask()
+    {
+        return count($this->task);
+    }
 }
